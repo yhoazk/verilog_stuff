@@ -1,0 +1,10 @@
+# ignore bin dir
+
+bin/*
+
+
+*.vcd
+*.exe
+*.swp
+*~
+*.bak
