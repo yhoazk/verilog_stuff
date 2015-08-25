@@ -19,6 +19,20 @@
 
 ## Tasks and functions
 
+A function cannot call a task, but a task can call a function
+A function runs on time zero, no timing events are allowed
+A task may or may not run in time zero
+
+
+
+## Delta simulation time
+A delta simulation time are evaluation of expressions, followed by value updates,
+causing more evaluations and more value updates.
+
+## `timescale`
+timescale is used to determine how time is represented as an integer internally
+to the simulator
+
 ## Basic syntax and structure
 - begins with keyword `module` and ends with the keyword `endmodule`
 - case sensitive
@@ -72,6 +86,23 @@ module multiplier
  - Binary (b or B) `'b1010` 32-bit wide binary number
  - Octal (o or O) `'o21` = 32-bit wide octal number
  - Signed (s or S) `16'shFA` = signed 16-bit hex value
+
+Blocking and non-blocking assingment
+(=) Blocking assingment:
+The whole statement is executed before passing to the next one
+
+(<=) non-blocking assingment:
+evaluates all the right hand sides for the current time unit and assigns the
+left hand sides at the end of the time unit
+
+
+Verilog scheduling semantics implies a four-level deep queue for the current
+simulation:
+1.- Active events
+2.- Inactive events
+3.- non-blocking assign updates
+4.- Monitor events
+
 
 ### Special numbers chars
 _ for readability
