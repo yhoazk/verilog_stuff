@@ -1,0 +1,1 @@
+/* Test bech for a simple FSM */
