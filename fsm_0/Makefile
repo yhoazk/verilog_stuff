@@ -1,11 +1,11 @@
 all: clean comp run
 
 clean:
-	rm -rf *.log shift.vcd shift_tb.exe
+	rm -rf *.log fsm_0.vcd fsm_0_tb.exe
 
 comp:
-	iverilog -o shift_tb.exe shift_left.v shift_left_tb.v
+	iverilog -o fsm_0_tb.exe fsm_0.v fsm_0_tb.v
 
 run:
-	vvp shift_tb.exe
-	gtkwave shift.vcd &
+	vvp fsm_0_tb.exe
+	gtkwave fsm_0.vcd &
