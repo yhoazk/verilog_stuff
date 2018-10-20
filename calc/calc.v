@@ -1,6 +1,4 @@
 
-
-
 module calc(
     input clk,
     input rst,

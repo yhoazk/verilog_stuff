@@ -244,7 +244,7 @@ assign ram_enable   = control_reg[0];
    //  The following code is only necessary if you wish to initialize the RAM
    //  contents via an external file (use $readmemb for binary data)
    //initial
-   //     $readmemh("C:/Users/gaespind/Dropbox/tarea5/memData.dat", mem);
+   //     $readmemh("C:/Users/iiiiii/Dropbox/tarea5/memData.dat", mem);
 
 
 //   initial begin    //cargar los datos contenidos en el registro 2 + contenido del reg 1
