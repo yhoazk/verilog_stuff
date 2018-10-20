@@ -66,6 +66,7 @@ always@(*)begin
     default: begin
         nxt_state = curr_state;
     end
+    endcase
 end
 
 always@(posedge clk) begin
@@ -89,6 +90,7 @@ always@(posedge clk) begin
             STATE_FOURTH: begin
               out_val <= OUT_ST_4;
             end
+          endcase
         end
 end
 
