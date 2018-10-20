@@ -19,7 +19,7 @@ end
 
 initial begin
 $display($time,"<<< BEGIN >>>");
-$monitor("%d\t%d\t%d\t%h\t", $time, clk, rst, shift_out);
+$monitor("%d\t%d\t%d\t%b\t", $time, clk, rst, shift_out);
     clk = 1'b0;
     rst = 1'b1;
 #15  rst = 1'b0;

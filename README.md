@@ -1,4 +1,4 @@
-# Verilog 
+# Verilog
 
 # Verilog review
 
@@ -6,34 +6,34 @@
 **RTL**: A type of behavioral modeling, for the purpose of synthesis.
 
 ## Componentes of a verilog HDL module
- - ports
- - data types
- - Assigning values and numbers
- - operators
- - behavioral modeling: A components is described by its in/out response
+- ports
+- data types
+- Assigning values and numbers
+- operators
+- behavioral modeling: A components is described by its in/out response
   - Continuous assingmentes
   - procedural blocks
- - Structural modeling: A component is described by interconnectig
+- Structural modeling: A component is described by interconnecting
  low-level component/primitives
-
 
 ## Tasks and functions
 
-A function cannot call a task, but a task can call a function
-A function runs on time zero, no timing events are allowed
-A task may or may not run in time zero
-
-
+- A function cannot call a task, but a task can call a function
+- A function runs on time zero, no timing events are allowed
+- A task may or may not run in time zero
 
 ## Delta simulation time
+
 A delta simulation time are evaluation of expressions, followed by value updates,
 causing more evaluations and more value updates.
 
 ## `timescale`
+
 timescale is used to determine how time is represented as an integer internally
 to the simulator
 
 ## Basic syntax and structure
+
 - begins with keyword `module` and ends with the keyword `endmodule`
 - case sensitive
 - statements end with semi-colon (;)
@@ -68,6 +68,7 @@ can be assinged only within a procedure, or a task or a function.
 ### *Verilog support s connetcions by ordererd list or by name*
 
 ### Paramenters
+
 - like defines in `C`, value assinged to a symbolic name
 - must resolve to a constatn at compile time
 - can be overwritten at compile time
@@ -75,12 +76,13 @@ can be assinged only within a procedure, or a task or a function.
 
 it is also possible to configure the parameters at the module's instantiation
 
-```
+```v
 module multiplier
 #(paramenter size = 8)(<por list>);
 ```
 
 ### Assigning values
+
  - Decimal (d or D) `16'd255` = 16 bit wide decimal
  - Hexadecimal (h or H) `8'h9A` = 8bit wide Hexadecimal
  - Binary (b or B) `'b1010` 32-bit wide binary number
@@ -105,18 +107,20 @@ simulation:
 
 
 ### Special numbers chars
-_ for readability
-x unknown
-z high impedance
+
+- `_` for readability
+- `x` unknown
+- `z` high impedance
 
 ### Bit wise operations
+
 | symbol | functionality | Example |
 |--------|---------------|---------|
-| `~`  | **invert** each bit  |   |
-| `&`  | **AND** each bit  |   |
-| `pipe `  | **OR** each bit  |   |
-| `^`  | **XOR** each bit  |   |
-| `~^` or `^~`   | **XNOR** each bit  |   |
+| `~`    | **invert** each bit |   |
+| `&`    | **AND** each bit    |   |
+| `pipe|`| **OR** each bit     |   |
+| `^`    | **XOR** each bit    |   |
+|`~^`or`^~`| **XNOR** each bit |   |
 
 Result is the size of the largest operand
 operates on each bit or bit pairing pf operands
@@ -128,26 +132,27 @@ Operands are left-extended if sizes are different
 |--------|---------------|
 | `&`  |  **AND** all bits |
 | `~&`  |  **NAND** all bits |
-| `pipe`  |  **OR** all bits |
-| `~pipe`  |  **NOR** all bits |
+| `|`  |  **OR** all bits |
+| `~|`  |  **NOR** all bits |
 | `^`  |  **XOR** all bits |
 | `^~` or `~^`  |  **XNOR** all bits |
-
 
 Reduces a vector to a single value
 
 ### Relational operators
 
 ### Equality operators
-== result unknown if vector contains x or z
-!= result unknown if vector contains x or z
-=== takes into account z and x for comparison
-!== takes into account z and x for comparison
+
+- `==` result unknown if vector contains x or z
+- `!=` result unknown if vector contains x or z
+- `===` takes into account z and x for comparison
+- `!==` takes into account z and x for comparison
 
 ### Logical operators
-!
-&&
-||
+
+- `!`
+- `&&`
+- `||`
 
 For if and while
 Same as in C
@@ -155,41 +160,50 @@ Returns a 1 bit scalar value of boolean true or false
 x or z are both considered unknown in operands and result is always unknown
 
 ### shift operators
-`<<` logical shift left
-`>>` logical shift right
-`<<<` arithmetic shift left (signed)
-`>>>` arithmetic shift right  (Signed)
 
-Right shifts
-  * Logical: Vacated positions always filled with zero
-  * arithmetic (unsigned) Vacated positions filled with zero
-  * arithmetic (signed): vacated positions filled with the value of the MSB
+- `<<` logical shift left
+- `>>` logical shift right
+- `<<<` arithmetic shift left (signed)
+- `>>>` arithmetic shift right  (Signed)
+
+Right shifts:
+
+* Logical: Vacated positions always filled with zero
+* arithmetic (unsigned) Vacated positions filled with zero
+* arithmetic (signed): vacated positions filled with the value of the MSB
 Logical shift: Vacated positions always filled with zero
 Shifted values  are lost
 
 ### Miscellaneous operators
-?: Conditional test  | eg: (condition)? true_value : false_value;
 
-{} concatentate
+`?:` Conditional test. eg:
+
+```v
+ (condition)? true_value : false_value;
 ```
+
+`{}` concatentate
+
+```verilog
   ain = 3'b010; bin = 3'b110
   {ain, bin} = 6'b010_1100;
-
 ```
 
-{{}} replicate
+`{{}}` replicate
 
 ```verilog
 {3{3'b101}} => 9'b101101101
 
 ```
+
 ## Continuous assingment
 
 ## procedutal assingment
 
 **white space insensitive**
 ### Basis structure of a module
-```
+
+```v
 module module_name(port lists);
   [port declarations]
 
@@ -200,26 +214,32 @@ module module_name(port lists);
   [timing specifications]
 endmodule
 ```
-![](/home/porko/Imágenes/Captura de pantalla de 2015-08-23 13-36-30.png)
+
+![]()
 
 ## All about resets
+
 The purpose of the reset is to take the ASIC, FPGA or related
 to a known state and/or synchronize it to an input data
 stream. process the data, and then output it.
 
 ### Asyncronous resets
-  - Requires less gates than Sync reset
-  - Does not requires the clk to be active
-  - Suffers from metastability problems
-  ``` verilog
+
+- Requires less gates than Sync reset
+- Does not requires the clk to be active
+- Suffers from metastability problems
+
+``` verilog
   always @ (posedge clk )
   if ( reset == 1'b1) begin
     c <= 0;
   end else begin
     c <= a;
   end
-  ```
+```
+
 ### Synchronous resets
+
 - This kind of resets requires more gates to implement
 - Requires that the clk is active always
 - Synchronous reset does not have metastability problems

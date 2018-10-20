@@ -1,9 +1,5 @@
 /*
- * assing es para logica cominacional
- * 
  * */
-
-
 module shift_left( clk,  rst,  shift);
  input clk;
  input rst;
@@ -18,8 +14,6 @@ always @(posedge clk) begin
     end
 end
 
-
 assign shift[7:0] = shift_r[7:0];
-
 
 endmodule /* shift_left */
