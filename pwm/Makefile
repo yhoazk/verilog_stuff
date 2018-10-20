@@ -1,4 +1,4 @@
-APP=division
+APP=pwm
 APP_TB=${APP}_tb
 # for windows
 #IVERILOG="C:\iverilog\bin\iverilog.exe" 

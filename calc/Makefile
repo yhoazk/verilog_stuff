@@ -1,4 +1,4 @@
-APP=division
+APP=calc
 APP_TB=${APP}_tb
 # for windows
 #IVERILOG="C:\iverilog\bin\iverilog.exe" 

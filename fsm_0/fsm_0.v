@@ -26,7 +26,7 @@ reg [4:0] curr_state;
 reg [4:0] nxt_state;
 /* Next state logic */
 always@(*)begin
-        nxt_state = curr_state;
+    nxt_state = curr_state;
     case(curr_state)
     STATE_INITIAL: begin
         if(in_val == 8'b1000_0001)begin
