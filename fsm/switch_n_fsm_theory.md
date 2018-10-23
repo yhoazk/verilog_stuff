@@ -16,17 +16,9 @@ implement a LUT instead of leaving it to compiler/optimizer/synth choice.
 
 
 
-
-
 - - -
 
 #### List of switching functions `f(x,y)` for vars `x` and `y`
-
-| a<sub>1</sub> |      Are      |  Cool |
-|:-------------:|:-------------:|------:|
-|               |               |       |
-|               |               |       |
-|               |               |       |
 
 
 | a<sub>3</sub> | a<sub>2</sub> | a<sub>1</sub> | a<sub>0</sub> |  `f(x,y)`     | fnc name      | symbol        |
@@ -59,12 +51,14 @@ a<sub>3</sub>. There are six nonsimilar funcitions which are known as trivial
 
 while 
 
-4. `f = xy`
+4. `f = xy`  same as `f = x&y`
 5. `f = x+y`
 6. `f = xy + ~x~y`
 
 are known as non-trivial functions. Any other function may be obtained from these six by
-complementation or interchange of variables. 
-
-
-
+complementation or interchange of variables. These non-trivial operations are functionaly
+complete, which means that every switching function can be expressed entirely by means
+of operations from this set. Moreover, by means of DeMorgan's Theorems it can be shown
+that the set `{|, ~}` is also functionally complete, since `x & y == (~x + ~y)` the same
+for the set `{&, ~}` Many functionally complete sets of operations exist, among the more
+important if which are NAND and NOR.
