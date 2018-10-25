@@ -62,3 +62,16 @@ of operations from this set. Moreover, by means of DeMorgan's Theorems it can be
 that the set `{|, ~}` is also functionally complete, since `x & y == (~x + ~y)` the same
 for the set `{&, ~}` Many functionally complete sets of operations exist, among the more
 important if which are NAND and NOR.
+
+## Synchronous sequential circuits
+
+A finite state machine or finite automaton is a model describing the synchronous
+sequential macine, the spatial counter part is an iterative network.
+
+### Moore and Mealy
+
+Moore FSM output depends only on the present state, in mealy also on the present input.
+For logic synthesis prefer Moore as Mealy can cause metastability issues.
+
+Mealy FSMs need less states and then less HW. They react asynchronously. Moore machines
+change with the clock, require more HW but are easier to design.
