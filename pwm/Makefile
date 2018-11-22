@@ -8,6 +8,7 @@ APP_TB=${APP}_tb
 IVERILOG=iverilog
 VVP=vvp
 GTK_WAVE=gtkwave
+
 all: clean comp run
 
 clean:
