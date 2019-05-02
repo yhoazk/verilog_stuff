@@ -253,3 +253,5 @@ always @ (posedge clk or posedge reset)
    c <= a;
  end
 ```
+
+[Book Asic](https://www10.edacafe.com/book/ASIC/)
